@@ -1,15 +1,44 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Création de l'objet ContactsManager
+        ContactsManager myContactsManager = new ContactsManager();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        // Création du premier contact
+        Contact ami1 = new Contact();
+        ami1.nom = "Jean";
+        ami1.Numero_de_telephone = "0102030405";
+        myContactsManager.addContact(ami1);
+
+        //Création du deuxième contact
+        Contact ami2 = new Contact();
+        ami2.nom = "Marie";
+        ami2.Numero_de_telephone = "0607080910";
+        myContactsManager.addContact(ami2);
+
+        // Création du troisième contact
+        Contact ami3 = new Contact();
+        ami3.nom = "Paul";
+        ami3.Numero_de_telephone = "0711223344";
+        myContactsManager.addContact(ami3);
+
+        // création du quatrième contact
+        Contact ami4 = new Contact();
+        ami4.nom = "Sophie";
+        ami4.Numero_de_telephone = "0988776655";
+        myContactsManager.addContact(ami4);
+
+        // Création du cinquième contact
+        Contact ami5 = new Contact();
+        ami5.nom = "Lucas";
+        ami5.Numero_de_telephone = "0555443322";
+        myContactsManager.addContact(ami5);
+
+        //Rechercher un contact et afficher son numéro
+        Contact resultat = myContactsManager.searchContact("Marie");
+        if (resultat != null) {
+            System.out.println("Numéro de " + resultat.nom + " : " + resultat.Numero_de_telephone);
+        } else {
+            System.out.println("Contact non trouvé");
         }
     }
 }
